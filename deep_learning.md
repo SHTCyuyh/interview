@@ -25,3 +25,16 @@
     * 增加噪声：向音频中添加噪声，模拟不同的环境条件。
     * 时间扭曲：对音频进行时间伸缩或压缩，增加数据的多样性。
     * 频率滤波：对音频进行频率滤波，模拟不同的声音特征。
+
+transformer的结构
+* NLP中
+![transformer](fig/transformer.jpg)
+  * decoder ：
+    包含两个 Multi-Head Attention 层。
+    第一个 Multi-Head Attention 层采用了 Masked 操作。
+    第二个 Multi-Head Attention 层的K, V矩阵使用 Encoder 的编码信息矩阵C进  行计算，而Q使用上一个 Decoder block 的输出计算。
+    最后有一个 Softmax 层计算下一个翻译单词的概率。
+* cv中：
+* ![vit](fig/vit.jpg)
+  * decoder:
+    MLP（task-based decoder和下游任务相关）
